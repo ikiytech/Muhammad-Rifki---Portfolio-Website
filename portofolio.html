@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio MR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MR</div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html" class="resume-btn">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Portfolio Section -->
+<section class="container">
+    <div class="text-section">
+      <h3 class="subtitle" id="portfolio-subtitle">MY WORK</h3>
+      <h1 class="title" id="portfolio-title"></h1>
+      <p class="description" id="portfolio-description"></p>
+    </div>
+    
+    <!-- Projects -->
+    <div class="projects-section">
+      <div class="project-card">
+        <img src="src/images/project1.png" alt="Project 1" class="project-image">
+        <h2 class="project-title">Project Title 1</h2>
+        <p class="project-description">Description of project 1 goes here. This could include details about technologies used and the goals of the project.</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="src/images/project2.png" alt="Project 2" class="project-image">
+        <h2 class="project-title">Project Title 2</h2>
+        <p class="project-description">Description of project 2 goes here. This could include details about technologies used and the goals of the project.</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="src/images/project3.png" alt="Project 3" class="project-image">
+        <h2 class="project-title">Project Title 3</h2>
+        <p class="project-description">Description of project 3 goes here. This could include details about technologies used and the goals of the project.</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+    </div>
+
+    <!-- Start Typing Effect -->
+  <script>
+    // Typing effect for the portfolio title
+    const portfolioTitle = "Portfolio";
+    let portfolioTitleIndex = 0;
+    const portfolioTitleElement = document.getElementById("portfolio-title");
+
+    function typePortfolioTitle() {
+      if (portfolioTitleIndex < portfolioTitle.length) {
+        portfolioTitleElement.textContent += portfolioTitle.charAt(portfolioTitleIndex);
+        portfolioTitleIndex++;
+        setTimeout(typePortfolioTitle, 100); // Adjust typing speed here (in milliseconds)
+      } else {
+        setTimeout(() => {
+          // Clear the title and restart typing
+          portfolioTitleElement.textContent = "";
+          portfolioTitleIndex = 0;
+          typePortfolioTitle();
+        }, 2000); // Wait 2 seconds before restarting
+      }
+    }
+
+    // Typing effect for the portfolio description
+    const portfolioDescription = "Here are some of the projects I have worked on.";
+    let portfolioDescriptionIndex = 0;
+    const portfolioDescriptionElement = document.getElementById("portfolio-description");
+
+    function typePortfolioDescription() {
+      if (portfolioDescriptionIndex < portfolioDescription.length) {
+        portfolioDescriptionElement.textContent += portfolioDescription.charAt(portfolioDescriptionIndex);
+        portfolioDescriptionIndex++;
+        setTimeout(typePortfolioDescription, 100); // Adjust typing speed here (in milliseconds)
+      } else {
+        setTimeout(() => {
+          // Clear the description and restart typing
+          portfolioDescriptionElement.textContent = "";
+          portfolioDescriptionIndex = 0;
+          typePortfolioDescription();
+        }, 2000); // Wait 2 seconds before restarting
+      }
+    }
+
+    // Start typing effect on page load
+    window.onload = () => {
+      typePortfolioTitle();
+      typePortfolioDescription();
+    };
+  </script>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Dimas Abimanyu. All rights reserved.</p>
+  </footer>
+  
+</body>
+</html>

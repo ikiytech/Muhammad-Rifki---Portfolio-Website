@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills MR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MR</div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Services</a></li>
+        <li><a href="portofolio.html">Portfolio</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="index.html" class="resume-btn">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <!-- Skills Section -->
+<section class="container">
+    <div class="text-section">
+      <h3 class="subtitle" id="skills-subtitle">MY SKILLS</h3>
+      <h1 class="title" id="skills-title"></h1>
+      <p class="description" id="skills-description"></p>
+    </div>
+
+    <!-- Skills List -->
+    <div class="skills-list">
+      <div class="skill-item">
+        <h2>HTML</h2>
+        <p>Proficient in creating semantic and accessible web pages.</p>
+      </div>
+      <div class="skill-item">
+        <h2>CSS</h2>
+        <p>Experienced in styling web pages, including responsive design and layouts.</p>
+      </div>
+      <div class="skill-item">
+        <h2>JavaScript</h2>
+        <p>Skilled in making web pages interactive and dynamic using JavaScript.</p>
+      </div>
+      <div class="skill-item">
+        <h2>React</h2>
+        <p>Familiar with building user interfaces using React.js.</p>
+      </div>
+      <div class="skill-item">
+        <h2>Node.js</h2>
+        <p>Understanding of server-side development with Node.js.</p>
+      </div>
+      <div class="skill-item">
+        <h2>Python</h2>
+        <p>Basic knowledge of Python for scripting and data analysis.</p>
+      </div>
+      <div class="skill-item">
+        <h2>Tailwind CSS</h2>
+        <p>Experience with utility-first CSS framework for rapid UI development.</p>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Typing effect for the skills title
+    const skillsTitle = "Skills Overview";
+    let skillsTitleIndex = 0;
+    const skillsTitleElement = document.getElementById("skills-title");
+  
+    function typeSkillsTitle() {
+      if (skillsTitleIndex < skillsTitle.length) {
+        skillsTitleElement.textContent += skillsTitle.charAt(skillsTitleIndex);
+        skillsTitleIndex++;
+        setTimeout(typeSkillsTitle, 100); // Adjust typing speed here (in milliseconds)
+      } else {
+        setTimeout(() => {
+          // Clear the title and restart typing
+          skillsTitleElement.textContent = "";
+          skillsTitleIndex = 0;
+          typeSkillsTitle();
+        }, 2000); // Wait 2 seconds before restarting
+      }
+    }
+  
+    // Typing effect for the skills description
+    const skillsDescription = "Below are the skills I have acquired and honed through my learning and projects.";
+    let skillsDescriptionIndex = 0;
+    const skillsDescriptionElement = document.getElementById("skills-description");
+  
+    function typeSkillsDescription() {
+      if (skillsDescriptionIndex < skillsDescription.length) {
+        skillsDescriptionElement.textContent += skillsDescription.charAt(skillsDescriptionIndex);
+        skillsDescriptionIndex++;
+        setTimeout(typeSkillsDescription, 100); // Adjust typing speed here (in milliseconds)
+      } else {
+        setTimeout(() => {
+          // Clear the description and restart typing
+          skillsDescriptionElement.textContent = "";
+          skillsDescriptionIndex = 0;
+          typeSkillsDescription();
+        }, 2000); // Wait 2 seconds before restarting
+      }
+    }
+  
+    // Start typing effect on page load
+    window.onload = () => {
+      typeSkillsTitle();
+      typeSkillsDescription();
+    };
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Dimas Abimanyu. All rights reserved.</p>
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact MR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MR</div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Services</a></li>
+        <li><a href="portofolio.html">Portfolio</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="index.html" class="resume-btn">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+<section class="container">
+    <div class="text-section">
+      <h3 class="subtitle">GET IN TOUCH</h3>
+      <h1 class="title" id="contact-title"></h1>
+      <p class="description" id="contact-description"></p>
+    </div>
+  
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/xrbgzkov" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  
+    <!-- Start Typing Effect -->
+    <script>
+      // Typing effect for the contact title
+      const contactTitle = "Contact Me";
+      let contactTitleIndex = 0;
+      const contactTitleElement = document.getElementById("contact-title");
+  
+      function typeContactTitle() {
+        if (contactTitleIndex < contactTitle.length) {
+          contactTitleElement.textContent += contactTitle.charAt(contactTitleIndex);
+          contactTitleIndex++;
+          setTimeout(typeContactTitle, 100); // Adjust typing speed here (in milliseconds)
+        } else {
+          setTimeout(() => {
+            // Clear the title and restart typing
+            contactTitleElement.textContent = "";
+            contactTitleIndex = 0;
+            typeContactTitle();
+          }, 2000); // Wait 2 seconds before restarting
+        }
+      }
+  
+      // Typing effect for the contact description
+      const contactDescription = "Have any questions or want to work together? Feel free to send me a message!";
+      let contactDescriptionIndex = 0;
+      const contactDescriptionElement = document.getElementById("contact-description");
+  
+      function typeContactDescription() {
+        if (contactDescriptionIndex < contactDescription.length) {
+          contactDescriptionElement.textContent += contactDescription.charAt(contactDescriptionIndex);
+          contactDescriptionIndex++;
+          setTimeout(typeContactDescription, 100); // Adjust typing speed here (in milliseconds)
+        } else {
+          setTimeout(() => {
+            // Clear the description and restart typing
+            contactDescriptionElement.textContent = "";
+            contactDescriptionIndex = 0;
+            typeContactDescription();
+          }, 2000); // Wait 2 seconds before restarting
+        }
+      }
+  
+      // Start typing effect on page load
+      window.onload = () => {
+        typeContactTitle();
+        typeContactDescription();
+      };
+    </script>
+  </section>
+  
+</body>
+</html>

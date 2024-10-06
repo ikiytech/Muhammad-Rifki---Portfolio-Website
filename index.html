@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio MR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MR</div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Services</a></li>
+        <li><a href="portofolio.html">Portfolio</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="index.html" class="resume-btn">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+<section class="container">
+  <div class="text-section">
+    <h3 class="subtitle">MY NAME IS</h3>
+    <h1 class="title" id="typed-title"></h1>
+    <p class="description" id="typed-description"></p>
+  </div>
+  <div class="image-section">
+    <img src="src/images/sapiens.png" alt="Illustration">
+  </div>
+</section>
+
+<script>
+  // Typing effect for the title
+  const title = "Muhammad Rifki";
+  let titleIndex = 0;
+  const titleElement = document.getElementById("typed-title");
+
+  function typeTitle() {
+    if (titleIndex < title.length) {
+      titleElement.textContent += title.charAt(titleIndex);
+      titleIndex++;
+      setTimeout(typeTitle, 500); // Adjust typing speed here (in milliseconds)
+    } else {
+      setTimeout(() => {
+        eraseTitle(); // Start erasing the title after it’s finished
+      }, 1000); // Wait for 1 second before erasing
+      typeDescription(); // Start typing the description after the title is finished
+    }
+  }
+
+  // Erasing effect for the title
+  function eraseTitle() {
+    if (titleIndex > 0) {
+      titleElement.textContent = title.substring(0, titleIndex - 1);
+      titleIndex--;
+      setTimeout(eraseTitle, 50); // Adjust erasing speed here (in milliseconds)
+    } else {
+      // Restart the typing effect after erasing
+      titleIndex = 0;
+      setTimeout(typeTitle, 500); // Wait for 0.5 seconds before restarting
+    }
+  }
+
+  // Typing effect for the description
+  const description = "Saya baru belajar membuat desain Portofoli sederhana";
+  let descriptionIndex = 0;
+  const descriptionElement = document.getElementById("typed-description");
+
+  function typeDescription() {
+    if (descriptionIndex < description.length) {
+      descriptionElement.textContent += description.charAt(descriptionIndex);
+      descriptionIndex++;
+      setTimeout(typeDescription, 100); // Adjust typing speed here (in milliseconds)
+    }
+  }
+
+  // Start typing effect on page load
+  window.onload = typeTitle;
+</script>
+
+</body>
+</html>
